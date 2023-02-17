@@ -23,4 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Execute Python Script
-        run: python train.py
+        run: output= $(python train.py)
+
+      - name: Print output
+        run: echo "${{ steps.step1.output}}"
